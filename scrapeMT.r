@@ -39,3 +39,14 @@ printVals <- function(a){
     #cat(i)
   }
 }
+
+parseChartLine <- function(line, coll){
+  gsub("\"", "", line)
+  gsub("\\\\", "", line)
+  gsub("[A-z]", "", line)
+  cat(line)
+  pieces <- strsplit(line, ",", fixed = TRUE)
+  for(e1 in pieces){
+    cat(e1)
+  }
+}
