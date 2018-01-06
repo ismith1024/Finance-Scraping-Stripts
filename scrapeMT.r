@@ -40,13 +40,46 @@ printVals <- function(a){
   }
 }
 
-parseChartLine <- function(line, coll){
-  gsub("\"", "", line)
+parseEPSChartLine <- function(line, coll){
+  gsub('"', "", line)
   gsub("\\\\", "", line)
   gsub("[A-z]", "", line)
-  cat(line)
+  #cat(line)
   pieces <- strsplit(line, ",", fixed = TRUE)
   for(e1 in pieces){
-    cat(e1)
+    #cat(e1)
+    pieces2 <- strsplit(e1, ":", fixed = TRUE)
+    cat("Pieces2: ")
+    for(e2 in pieces2){
+      cat(e2)
+    }
+    cat("\n")
+    y <- gsub("\\\\", "", pieces2[[1]][2])
+    dat <- y
+    price <- pieces2[[2]][2]
+    eps <- pieces2[[3]][2]
+    pe <- pieces2[[4]][2]
+   
+    cat("Date: ")
+    cat(dat)
+    pieces3 <- strsplit(dat, "-", fixed = TRUE)
+    year = as.numeric(gsub('"',"",pieces3[[1]][1]))
+    month = as.numeric(pieces3[[1]][2])
+    day = as.numeric(gsub('"',"",pieces3[[1]][3]))
+    cat("  Year: ")
+    cat(year)
+    cat("  Month: ")
+    cat(month)
+    cat("  Day: ")
+    cat(day)
+    cat("  Price: ")
+    cat(price)
+    cat("  EPS: ")
+    cat(eps)
+    cat("  P/E: ")
+    cat(pe)
+    cat("\n")
+    
   }
+ 
 }
