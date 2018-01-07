@@ -21,7 +21,9 @@ run <- function(text){
     } 
   }
   
+  #cat("== Div Chart ========== ")
   #cat(divChart)
+  #cat("\n")
   
   for(e2 in peWebText){
     if(grepl("chartData", e2, fixed=TRUE)){
@@ -30,41 +32,101 @@ run <- function(text){
     } 
   }
   
+  #cat("== PE Chart ========== ")
+  #cat(peChart)
+  #cat("\n")
+  
   #split the chart rows
   divChartRows <- parseChart(divChart)[[1]]
-  epsChartRows <- parseChart(peChart)[[1]]
+  peChartRows <- parseChart(peChart)[[1]]
   
   #global results
   divResults <<- matrix(nrow = length(divChartRows), ncol = 6)
-  epsResults <<- matrix(nrow = length(epsChartRows), ncol = 6)
+  peResults <<- matrix(nrow = length(peChartRows), ncol = 6)
   
+  #cat("Div Result has ")
+  #cat(length(divChartRows))
+  #cat(" rows \n")
+  #cat("Pe Result has ")
+  #cat(length(peChartRows))
+  #cat(" rows \n")
+
   #parse each row
   i <- 0
+  #cat("===DIV CHART ROWS ++\n")
   for(e1 in divChartRows){
     #cat(e1)
-    #cat("\n")
+    cat("\n")
     #cat(".........")
     i <- i + 1
     rp <- strsplit(e1, "[:,]")
     rowPieces <- rp[[1]]
-
+    
     if(length(rowPieces) > 7){
-      cat("\n")
-      rowPieces
+      #for(e4 in rowPieces){
+      #  cat(e4)
+      #}
+      
       dp <- strsplit(rowPieces[2], "-", fixed = TRUE)
       datepieces <- dp[[1]]
       datepieces[1] <- gsub("c(\\","",datepieces[1], fixed = TRUE)
       datepieces[3] <- gsub("\\)","",datepieces[3], fixed = TRUE)
-      divResults[i, 1] <- as.numeric(gsub('"',"", datepieces[1]))
-      divResults[i, 2] <- as.numeric(gsub('"',"", datepieces[2]))
-      divResults[i, 3] <- as.numeric(gsub('"',"", datepieces[3]))
-      divResults[i, 4] <- as.numeric(rowPieces[4])
-      divResults[i, 5] <- as.numeric(rowPieces[6])
-      divResults[i, 6] <- as.numeric(gsub("}];","",rowPieces[8],fixed = TRUE))
+      
+      #cat(datepieces[1])
+      #cat(datepieces[2])
+      #cat(datepieces[3])
+      
+      divResults[i, 1] <- gsub('"',"", datepieces[1])
+      divResults[i, 2] <- gsub('"',"", datepieces[2])
+      divResults[i, 3] <- gsub('"',"", datepieces[3])
+      divResults[i, 4] <- rowPieces[4]
+      divResults[i, 5] <- rowPieces[6]
+      divResults[i, 6] <- gsub("}];","",rowPieces[8],fixed = TRUE)
+      
+      cat(divResults[i, 1])
+      cat(" .. ")
+      cat(divResults[i, 2])
+      cat(" .. ")
+      cat(divResults[i, 3])
+      cat(" .. ")
+      cat(divResults[i, 4])
+      cat(" .. ")
+      cat(divResults[i, 5])
+      cat(" .. ")
+      cat(divResults[i, 6])
+      cat("\n")
     }
   }
   
+  cat("== Div Results ===========\n")
   divResults
+  
+  #cat("===PE CHART ROWS ++\n")
+  i <- 0
+  for(e2 in peChartRows){
+    #cat(e2)
+    #cat("\n")
+    #cat(".........")
+    i <- i + 1
+    rp <- strsplit(e2, "[:,]")
+    rowPieces <- rp[[1]]
+    
+    if(length(rowPieces) > 7){
+      dp <- strsplit(rowPieces[2], "-", fixed = TRUE)
+      datepieces <- dp[[1]]
+      datepieces[1] <- gsub("c(\\","",datepieces[1], fixed = TRUE)
+      datepieces[3] <- gsub("\\)","",datepieces[3], fixed = TRUE)
+      peResults[i, 1] <- as.numeric(gsub('"',"", datepieces[1]))
+      peResults[i, 2] <- as.numeric(gsub('"',"", datepieces[2]))
+      peResults[i, 3] <- as.numeric(gsub('"',"", datepieces[3]))
+      peResults[i, 4] <- as.numeric(rowPieces[4])
+      peResults[i, 5] <- as.numeric(rowPieces[6])
+      peResults[i, 6] <- as.numeric(gsub("}];","",rowPieces[8],fixed = TRUE))
+    }
+  }
+  
+  cat("== P_E Results ===========\n")
+  peResults
 }
 
 
