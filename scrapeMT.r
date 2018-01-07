@@ -1,3 +1,128 @@
+run <- function(text){
+  #get the URL
+  divsURL <- paste("http://www.macrotrends.net/assets/php/dividend_yield.php?t=", text , sep = "")
+  peURL <- paste("http://www.macrotrends.net/assets/php/fundamental_ratio.php?t=", text , "&chart=pe-ratio" , sep = "")
+  
+  #read the data
+  divWebText <- readLines(divsURL)
+  peWebText <- readLines(peURL)
+  #cat(divWebText)
+  
+  
+  #get the chart
+  divChart <- ""
+  peChart <- ""
+  
+  for(e1 in divWebText){
+    if(grepl("chartData", e1, fixed=TRUE)){
+      divChart <- e1
+      break
+      #cat(divChart)
+    } 
+  }
+  
+  #cat(divChart)
+  
+  for(e2 in peWebText){
+    if(grepl("chartData", e2, fixed=TRUE)){
+      peChart <- e2
+      break
+    } 
+  }
+  
+  #split the chart rows
+  divChartRows <- parseChart(divChart)[[1]]
+  epsChartRows <- parseChart(peChart)[[1]]
+  
+  #global results
+  divResults <<- matrix(nrow = length(divChartRows), ncol = 6)
+  epsResults <<- matrix(nrow = length(epsChartRows), ncol = 6)
+  
+  #parse each row
+  i <- 0
+  for(e1 in divChartRows){
+    #cat(e1)
+    #cat("\n")
+    #cat(".........")
+    i <- i + 1
+    rp <- strsplit(e1, "[:,]")
+    rowPieces <- rp[[1]]
+
+    if(length(rowPieces) > 7){
+      cat("\n")
+      rowPieces
+      dp <- strsplit(rowPieces[2], "-", fixed = TRUE)
+      datepieces <- dp[[1]]
+      datepieces[1] <- gsub("c(\\","",datepieces[1], fixed = TRUE)
+      datepieces[3] <- gsub("\\)","",datepieces[3], fixed = TRUE)
+      divResults[i, 1] <- as.numeric(gsub('"',"", datepieces[1]))
+      divResults[i, 2] <- as.numeric(gsub('"',"", datepieces[2]))
+      divResults[i, 3] <- as.numeric(gsub('"',"", datepieces[3]))
+      divResults[i, 4] <- as.numeric(rowPieces[4])
+      divResults[i, 5] <- as.numeric(rowPieces[6])
+      divResults[i, 6] <- as.numeric(gsub("}];","",rowPieces[8],fixed = TRUE))
+    }
+  }
+  
+  divResults
+}
+
+
+parseEPSChartLine <- function(line){
+  gsub('"', "", line)
+  gsub("\\\\", "", line)
+  gsub("[A-z]", "", line)
+  #cat(line)
+  #########
+  # Split a:b,c:d into: [b, d]
+  #########
+  pieces <- strsplit(line, ",:")
+  for(e1 in pieces){
+    cat(e1)
+  }
+  #  pieces2 <- strsplit(e1, ":", fixed = TRUE)
+  #  cat("Pieces2: ")
+  #  for(e2 in pieces2){
+  #    cat(e2)
+  #  }
+  #  cat("\n")
+  
+  
+  if(length(pieces) == 8){
+  
+  y <- gsub("\\\\", "", pieces[2])
+    dat <- y
+    price <- pieces[4]
+    eps <- pieces[6]
+    pe <- pieces[8]
+    
+    cat("Date: ")
+    cat(dat)
+    pieces3 <- strsplit(dat, "-", fixed = TRUE)
+    year <- as.numeric(gsub('"',"",pieces3[[1]][1]))
+    month <- as.numeric(pieces3[[1]][2])
+    day <- as.numeric(gsub('"',"",pieces3[[1]][3]))
+    cat("  Year: ")
+    cat(year)
+    cat("  Month: ")
+    cat(month)
+    cat("  Day: ")
+    cat(day)
+    cat("  Price: ")
+    cat(price)
+    cat("  EPS: ")
+    cat(eps)
+    cat("  P/E: ")
+    cat(pe)
+    cat("\n")
+    
+    x <- c(year, month, day, price, eps, pe)
+    #coll <- rbind(coll, x)
+    return(x)
+  }
+  return(c(0, 0, 0, 0,0,0))
+}
+
 
 # function to get raw dividend text from a web page
 # urlString is the URL
@@ -12,7 +137,25 @@ readDivs <- function(symbol){
 readPE <- function(symbol){
     urlString <- paste("http://www.macrotrends.net/assets/php/fundamental_ratio.php?t=", symbol , "&chart=pe-ratio" , sep = "")
     text <- readLines(urlString)
-    return(text) 
+    chart <- getChart(text)
+    cat("CHART")
+    cat(chart)
+    text2 <- parseChart(chart)
+    results <<- matrix(nrow = length(text2), ncol = 9)
+    i <- 0
+    for(line in text2){
+      i <- i + 1
+      ro <- parseEPSChartLine(line)
+      results[i,1] = ro[1]
+      results[i,2] = ro[2]
+      results[i,3] = ro[3]
+      results[i,4] = ro[4]
+      results[i,5] = ro[5]
+      results[i,6] = ro[6]
+    }
+    
+    results
+    #return(text) 
 }
 
 getChart <- function(text){
@@ -40,46 +183,4 @@ printVals <- function(a){
   }
 }
 
-parseEPSChartLine <- function(line, coll){
-  gsub('"', "", line)
-  gsub("\\\\", "", line)
-  gsub("[A-z]", "", line)
-  #cat(line)
-  pieces <- strsplit(line, ",", fixed = TRUE)
-  for(e1 in pieces){
-    #cat(e1)
-    pieces2 <- strsplit(e1, ":", fixed = TRUE)
-    cat("Pieces2: ")
-    for(e2 in pieces2){
-      cat(e2)
-    }
-    cat("\n")
-    y <- gsub("\\\\", "", pieces2[[1]][2])
-    dat <- y
-    price <- pieces2[[2]][2]
-    eps <- pieces2[[3]][2]
-    pe <- pieces2[[4]][2]
-   
-    cat("Date: ")
-    cat(dat)
-    pieces3 <- strsplit(dat, "-", fixed = TRUE)
-    year = as.numeric(gsub('"',"",pieces3[[1]][1]))
-    month = as.numeric(pieces3[[1]][2])
-    day = as.numeric(gsub('"',"",pieces3[[1]][3]))
-    cat("  Year: ")
-    cat(year)
-    cat("  Month: ")
-    cat(month)
-    cat("  Day: ")
-    cat(day)
-    cat("  Price: ")
-    cat(price)
-    cat("  EPS: ")
-    cat(eps)
-    cat("  P/E: ")
-    cat(pe)
-    cat("\n")
-    
-  }
- 
-}
+
