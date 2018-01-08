@@ -99,7 +99,8 @@ run <- function(text){
   }
   
   cat("== Div Results ===========\n")
-  divResults
+  divFile <- paste(text,"divs.csv", sep = "")
+  write.csv(divResults, file = divFile)
   
   #cat("===PE CHART ROWS ++\n")
   i <- 0
@@ -126,7 +127,8 @@ run <- function(text){
   }
   
   cat("== P_E Results ===========\n")
-  peResults
+  divFile <- paste(text,"pe.csv", sep = "")
+  write.csv(divResults, file = divFile)
 }
 
 
@@ -244,5 +246,6 @@ printVals <- function(a){
     #cat(i)
   }
 }
+
 
 
