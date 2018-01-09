@@ -9,9 +9,9 @@ writediv <- function(symbol){
     year <- tab[row, 2]
     month <- tab[row, 3]
     day <- tab[row, 4]
-    #ticker <- symbol
+    ticker <- symbol
     sqlQuery = paste("INSERT INTO divs(year, month, day, ticker) VALUES(", year, ",", month, ",", day, ",'", symbol,"');" , sep = "")
-    #dbSendQuery(conn = db, sqlQuery)
+    dbSendQuery(conn = db, sqlQuery)
   }
   
   for(row in 1:nrow(tab)){
@@ -52,3 +52,16 @@ writepe <- function(symbol){
   }
   
 }
+
+symbols <- c("ABX", "ACM", "AQN", "BCE", "BEP", "BMO", "BNS", "BTE", "CAE", "CCJ", "CIGI", 
+             "CLS", "CM", "CNI", "CNQ", "CNR", "COT", "CP", "CPG", "CVE", "ECA", "ENB",
+             "ERF", "FCAP", "FSV", "FTS", "FTT", "GIB", "GIL", "GNW", "GTE", "IMO", "MFC",
+             "MGA", "PBA", "PFC", "QSR", "RBA", "ROG", "RY", "SJR", "SLF", "STN", "SU", "TAC",
+             "TAHO", "TD", "TECK", "TRI", "TRP", "TSG", "TU")
+
+for(i in symbols){
+  print(i)
+  writepe(i)
+  writediv(i)
+}
+
