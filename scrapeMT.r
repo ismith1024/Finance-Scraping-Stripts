@@ -1,25 +1,25 @@
 run <- function(text){
   #get the URL
-  divsURL <- paste("http://www.macrotrends.net/assets/php/dividend_yield.php?t=", text , sep = "")
+  #divsURL <- paste("http://www.macrotrends.net/assets/php/dividend_yield.php?t=", text , sep = "")
   peURL <- paste("http://www.macrotrends.net/assets/php/fundamental_ratio.php?t=", text , "&chart=pe-ratio" , sep = "")
   
   #read the data
-  divWebText <- readLines(divsURL)
+  #divWebText <- readLines(divsURL)
   peWebText <- readLines(peURL)
   #cat(divWebText)
   
   
   #get the chart
-  divChart <- ""
+  #divChart <- ""
   peChart <- ""
   
-  for(e1 in divWebText){
-    if(grepl("chartData", e1, fixed=TRUE)){
-      divChart <- e1
-      break
+  #for(e1 in divWebText){
+  #  if(grepl("chartData", e1, fixed=TRUE)){
+  #    divChart <- e1
+  #    break
       #cat(divChart)
-    } 
-  }
+  #  } 
+  #}
   
   #cat("== Div Chart ========== ")
   #cat(divChart)
@@ -37,11 +37,11 @@ run <- function(text){
   #cat("\n")
   
   #split the chart rows
-  divChartRows <- parseChart(divChart)[[1]]
+  #divChartRows <- parseChart(divChart)[[1]]
   peChartRows <- parseChart(peChart)[[1]]
   
   #global results
-  divResults <<- matrix(nrow = length(divChartRows), ncol = 6)
+  #divResults <<- matrix(nrow = length(divChartRows), ncol = 6)
   peResults <<- matrix(nrow = length(peChartRows), ncol = 6)
   
   #cat("Div Result has ")
@@ -52,55 +52,55 @@ run <- function(text){
   #cat(" rows \n")
 
   #parse each row
-  i <- 0
+  #i <- 0
   #cat("===DIV CHART ROWS ++\n")
-  for(e1 in divChartRows){
+  #for(e1 in divChartRows){
     #cat(e1)
-    cat("\n")
+    #cat("\n")
     #cat(".........")
-    i <- i + 1
-    rp <- strsplit(e1, "[:,]")
-    rowPieces <- rp[[1]]
+  #  i <- i + 1
+  #  rp <- strsplit(e1, "[:,]")
+  #  rowPieces <- rp[[1]]
     
-    if(length(rowPieces) > 7){
+  #  if(length(rowPieces) > 7){
       #for(e4 in rowPieces){
       #  cat(e4)
       #}
       
-      dp <- strsplit(rowPieces[2], "-", fixed = TRUE)
-      datepieces <- dp[[1]]
-      datepieces[1] <- gsub("c(\\","",datepieces[1], fixed = TRUE)
-      datepieces[3] <- gsub("\\)","",datepieces[3], fixed = TRUE)
+  #    dp <- strsplit(rowPieces[2], "-", fixed = TRUE)
+  #    datepieces <- dp[[1]]
+  #    datepieces[1] <- gsub("c(\\","",datepieces[1], fixed = TRUE)
+  #    datepieces[3] <- gsub("\\)","",datepieces[3], fixed = TRUE)
       
       #cat(datepieces[1])
       #cat(datepieces[2])
       #cat(datepieces[3])
       
-      divResults[i, 1] <- gsub('"',"", datepieces[1])
-      divResults[i, 2] <- gsub('"',"", datepieces[2])
-      divResults[i, 3] <- gsub('"',"", datepieces[3])
-      divResults[i, 4] <- rowPieces[4]
-      divResults[i, 5] <- rowPieces[6]
-      divResults[i, 6] <- gsub("}];","",rowPieces[8],fixed = TRUE)
+  #    divResults[i, 1] <- gsub('"',"", datepieces[1])
+  #    divResults[i, 2] <- gsub('"',"", datepieces[2])
+  #    divResults[i, 3] <- gsub('"',"", datepieces[3])
+  #    divResults[i, 4] <- rowPieces[4]
+  #    divResults[i, 5] <- rowPieces[6]
+  #    divResults[i, 6] <- gsub("}];","",rowPieces[8],fixed = TRUE)
       
-      cat(divResults[i, 1])
-      cat(" .. ")
-      cat(divResults[i, 2])
-      cat(" .. ")
-      cat(divResults[i, 3])
-      cat(" .. ")
-      cat(divResults[i, 4])
-      cat(" .. ")
-      cat(divResults[i, 5])
-      cat(" .. ")
-      cat(divResults[i, 6])
-      cat("\n")
-    }
-  }
+  #    cat(divResults[i, 1])
+  #    cat(" .. ")
+  #    cat(divResults[i, 2])
+  #    cat(" .. ")
+  #    cat(divResults[i, 3])
+  #    cat(" .. ")
+  #    cat(divResults[i, 4])
+  #    cat(" .. ")
+  #    cat(divResults[i, 5])
+  #    cat(" .. ")
+  #    cat(divResults[i, 6])
+  #    cat("\n")
+  #  }
+  #}
   
-  cat("== Div Results ===========\n")
-  divFile <- paste(text,"divs.csv", sep = "")
-  write.csv(divResults, file = divFile)
+  #cat("== Div Results ===========\n")
+  #divFile <- paste(text,"divs.csv", sep = "")
+  #write.csv(divResults, file = divFile)
   
   #cat("===PE CHART ROWS ++\n")
   i <- 0
@@ -127,8 +127,8 @@ run <- function(text){
   }
   
   cat("== P_E Results ===========\n")
-  divFile <- paste(text,"pe.csv", sep = "")
-  write.csv(divResults, file = divFile)
+  peFile <- paste(text,"pe.csv", sep = "")
+  write.csv(peResults, file = peFile)
 }
 
 

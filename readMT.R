@@ -22,6 +22,7 @@ writediv <- function(symbol){
     dpr <- tab[row,6]
     yld <-tab[row,7]
     sqlQuery1 <- paste("UPDATE divs SET price = " , price, ", div = ", dpr, " , yld = ", yld, " WHERE year = ", year, " AND month = ", month, " AND day = ", day, " AND ticker = '", symbol, "';", sep = "")
+    print(sqlQuery1)
     dbSendQuery(conn = db, sqlQuery1)
   }
   
@@ -62,6 +63,6 @@ symbols <- c("ABX", "ACM", "AQN", "BCE", "BEP", "BMO", "BNS", "BTE", "CAE", "CCJ
 for(i in symbols){
   print(i)
   writepe(i)
-  writediv(i)
+  #writediv(i)
 }
 
