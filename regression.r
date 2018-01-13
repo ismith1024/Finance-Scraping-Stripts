@@ -5,7 +5,7 @@ require(lattice)
 db <- dbConnect(SQLite(), dbname="~/Data/USFinance.db")
 
 
-divreg <- function(symbol, todaysPrice){
+divreg <- function(symbol, todaysPrice, todaysYield){
   thisYear <- 2018
   thisMonth <- 1
   
@@ -25,11 +25,9 @@ divreg <- function(symbol, todaysPrice){
   plot(divTable$Yld, divTable$Annualized, main = paste("Yield Regression: ", symbol, sep = ""), xlab = "Dividend Yield", ylab = "Annualized Return")
   
   abline(dv.mod1)
+
+  print("Predicted annualized yeld: ")  
+  predict(dv.mod1, data.frame(Yld = c(todaysYield)))
   
-  #xyplot(Annualized ~ Yld, data = divTable,
-  #       xlab = "Dividend Yield",
-  #       ylab = "Annualized Return",
-  #       main = paste("Yield Regression: ", symbol, sep = "")
-  #)
-  
+
 }
