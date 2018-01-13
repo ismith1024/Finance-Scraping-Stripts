@@ -33,23 +33,28 @@ writepe <- function(symbol){
   tab <- read.csv(file=fil, header = TRUE, sep = ",")
   
   for(row in 1:nrow(tab)){
-    year <- tab[row, 2]
-    month <- tab[row, 3]
-    day <- tab[row, 4]
-    ticker <- symbol
-    sqlQuery = paste("INSERT INTO earnings(year, month, day, ticker) VALUES(", year, ",", month, ",", day, ",'", symbol,"');" , sep = "")
-    dbSendQuery(conn = db, sqlQuery)
+    if(! is.na(tab[row,2])){
+      year <- tab[row, 2]
+      month <- tab[row, 3]
+      day <- tab[row, 4]
+      ticker <- symbol
+      sqlQuery = paste("INSERT INTO earnings(year, month, day, ticker) VALUES(", year, ",", month, ",", day, ",'", symbol,"');" , sep = "")
+      dbSendQuery(conn = db, sqlQuery)
+    }
   }
   
   for(row in 1:nrow(tab)){
-    year <- tab[row,2]
-    month <- tab[row,3]
-    day <- tab[row, 4]
-    price <- tab[row, 5]
-    eps <- tab[row,6]
-    pe <-tab[row,7]
-    sqlQuery1 <- paste("UPDATE earnings SET price = " , price, ", earnings = ", eps, " , pe = ", pe, " WHERE year = ", year, " AND month = ", month, " AND day = ", day, " AND ticker = '", symbol, "';", sep = "")
-    dbSendQuery(conn = db, sqlQuery1)
+    if(! is.na(tab[row,2])){
+      year <- tab[row,2]
+      month <- tab[row,3]
+      day <- tab[row, 4]
+      price <- tab[row, 5]
+      eps <- tab[row,6]
+      pe <-tab[row,7]
+      sqlQuery1 <- paste("UPDATE earnings SET price = " , price, ", earnings = ", eps, " , pe = ", pe, " WHERE year = ", year, " AND month = ", month, " AND day = ", day, " AND ticker = '", symbol, "';", sep = "")
+      print(sqlQuery1)
+      dbSendQuery(conn = db, sqlQuery1)
+    }
   }
   
 }
