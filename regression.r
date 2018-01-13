@@ -1,4 +1,7 @@
 library(sqldf)
+require(stats)
+require(lattice)
+
 db <- dbConnect(SQLite(), dbname="~/Data/USFinance.db")
 
 
@@ -6,7 +9,7 @@ divreg <- function(symbol, todaysPrice){
   thisYear <- 2018
   thisMonth <- 1
   
-  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND Yld IS NOT NULL", sep = "");
+  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND Yld IS NOT NULL AND Yld < 50", sep = "");
   divTable <- dbGetQuery(db, sqlString);
   
   divTable$CADPrice <- divTable$Xchange * divTable$Price
@@ -14,6 +17,19 @@ divreg <- function(symbol, todaysPrice){
   divTable$Return <- todaysPrice / divTable$CADPrice
   divTable$Annualized <- divTable$Return ^ (1/divTable$Elapsed)
   
-  print(divTable)
+  #print(divTable)
+  
+  dv.mod1 <- lm(Annualized ~ Yld, data = divTable)
+  
+  #summary(dv.mod1)
+  plot(divTable$Yld, divTable$Annualized, main = paste("Yield Regression: ", symbol, sep = ""), xlab = "Dividend Yield", ylab = "Annualized Return")
+  
+  abline(dv.mod1)
+  
+  #xyplot(Annualized ~ Yld, data = divTable,
+  #       xlab = "Dividend Yield",
+  #       ylab = "Annualized Return",
+  #       main = paste("Yield Regression: ", symbol, sep = "")
+  #)
   
 }
