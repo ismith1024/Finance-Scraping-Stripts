@@ -9,7 +9,7 @@ divreg <- function(symbol, todaysPrice, todaysYield){
   thisYear <- 2018
   thisMonth <- 1
   
-  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND Yld IS NOT NULL AND Yld < 10", sep = "");
+  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND Yld IS NOT NULL AND Yld < 10 AND (Y < 2017 OR M < 6)", sep = "");
   divTable <- dbGetQuery(db, sqlString);
   
   divTable$CADPrice <- divTable$Xchange * divTable$Price
@@ -35,7 +35,7 @@ pereg <- function(symbol, todaysPrice, todaysPE){
   thisYear <- 2018
   thisMonth <- 1
   
-  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND PE IS NOT NULL", sep = "")# AND pe < 10", sep = "");
+  sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND PE IS NOT NULL AND pe < 70 AND (Y < 2017 OR M < 6)", sep = "");
   peTable <- dbGetQuery(db, sqlString);
   
   peTable$CADPrice <- peTable$Xchange * peTable$Price
