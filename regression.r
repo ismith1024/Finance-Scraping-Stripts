@@ -1,5 +1,5 @@
 library(sqldf)
-require(stats)
+symbolsrequire(stats)
 require(lattice)
 
 db <- dbConnect(SQLite(), dbname="~/Data/USFinance.db")
@@ -7,7 +7,7 @@ db <- dbConnect(SQLite(), dbname="~/Data/USFinance.db")
 
 divreg <- function(symbol, todaysPrice, todaysYield){
   thisYear <- 2018
-  thisMonth <- 1
+  thisMonth <- 5
   
   sqlString <- paste("SELECT * FROM Integrated WHERE Symbol = '", symbol,"' AND Yld IS NOT NULL AND Yld < 10 AND (Y < 2017 OR M < 6)", sep = "");
   divTable <- dbGetQuery(db, sqlString);
