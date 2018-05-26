@@ -115,35 +115,12 @@ run <- function(){
   syms <- symbols[[1]]
   
   for(sym in syms){
-  #  sym <- rs[i,1]
     for(dat in c(0:89)){
       aURL <- tsxURL(sym, dat)
       print(aURL)
       scrapeLine(aURL, sym, "TSX")
     }
   }
-  
-  #for(i in 1:nrow(symbols)){
-  #  sym <- rs[i,1]
-  #  for(dat in c(0:89)){
-  #    aURL <- tsxURL(sym, dat)
-  #    print(aURL)
-  #    scrapeLine(aURL, sym, "TSX")
-  #  }
-  #}
-  
-  #for(sym in symbols){
-
-  #}
-  
-
-  #for(sym in rs){
-    #print(sym)
-    #for(dat in c(0:89)){
-    #  aURL <- tsxURL(sym, dat)
-    #  scrapeLine(aURL, sym, "TSX")
-    #}
-  #}
 
   dbClearResult(rs)   
 }
