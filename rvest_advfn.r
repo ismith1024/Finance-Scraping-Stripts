@@ -2,7 +2,7 @@
 library(rvest)
 library(xml2)
 library(sqldf)
-symbolsrequire(stats)
+require(stats)
 require(lattice)
 
 # Database connection to the Canadian finance SQLite database
@@ -22,7 +22,8 @@ tsxURL <- function(symb, dat){
 #takes the URL
 #writes the values to SQLite if successful
 #returns 0 for success or -1 for no data
-scrapeLine <- function(theURL){
+scrapeLine <- function(theURL, symb, ex){
+  
   advfn <- read_html(theURL)
   #advfn <- read_html("https://ca.advfn.com/stock-market/TSX/BNS/financials?btn=istart_date&istart_date=44&mode=quarterly_reports")
   nodes <- advfn %>% html_nodes("td") %>% html_text
@@ -47,7 +48,7 @@ scrapeLine <- function(theURL){
     } else if(i == "quarter end date"){
       datesOn <- TRUE
       j <- 1
-    } else if(i == "dividends paid per share"){
+    } else if(i == "dividends paid per share" || i == "Dividends Paid Per Share (DPS)"){
       divsOn <- TRUE
       j <- 1
     } else if(divsOn == TRUE && j <= 5) {
@@ -68,6 +69,15 @@ scrapeLine <- function(theURL){
   print(eps)
   print(div)
   print(dates)
+  
+  for(k in c(1:5)){
+    sqlQuery <- paste("INSERT INTO earnings(symbol, exchange, date, eps, div) VALUES('",symb, "','", ex, "','" ,dates[k], "',", eps[k], ",", div[k],");", sep = "")
+    tryCatch({
+      dbSendQuery(conn = db, sqlQuery)
+    },
+      error = function(e) print(e)
+    )
+  }
   return(0)
 }
 
@@ -92,4 +102,16 @@ test <- function(){
       j = j + 1
     }
   }
+}
+
+run <- function(){
+  symbols = c("T", "CNQ")
+  
+  for(sym in symbols){
+    for(dat in c(0:89)){
+      aURL <- tsxURL(sym, dat)
+      scrapeLine(aURL, sym, "TSX")
+    }
+  }
+   
 }
