@@ -107,7 +107,7 @@ test <- function(){
 run <- function(){
   
   #fetch the symbols from the SQLite database
-  rs <- dbSendQuery(db, "SELECT symbol FROM symbols;")
+  rs <- dbSendQuery(db, "SELECT symbol FROM need;") #symbols
   while (!dbHasCompleted(rs)) {
     symbols <- dbFetch(rs)
   }
