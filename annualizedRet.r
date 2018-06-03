@@ -35,6 +35,10 @@ plot(timeSeries, pch = ".")
 
 
 #get time series and compute the return data for a symbol
+#time series is smoothed using a Weiersrass transform -- intended to remove Gaussian noise
+#Kernel prameters:
+#n = 51
+#sigma = 10
 run <- function(symb){
   timeSer <- getTimeSeries(symb)
   #generate the kernel from here for now:
@@ -63,10 +67,10 @@ run <- function(symb){
 
 
 #example return calculation
-iYear <- timeSeries[250, "year_"]
-iMon <- timeSeries[250, "month_"]
-iDay <- timeSeries[250, "day_"]
-iVal <- wTrans[250]
+#iYear <- timeSeries[250, "year_"]
+#iMon <- timeSeries[250, "month_"]
+#iDay <- timeSeries[250, "day_"]
+#iVal <- wTrans[250]
 
-getAnnualizedReturn(iDay, iMon, iYear, iVal, fDay, fMon, fYear, fVal)
+#getAnnualizedReturn(iDay, iMon, iYear, iVal, fDay, fMon, fYear, fVal)
 
