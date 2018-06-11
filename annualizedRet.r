@@ -131,4 +131,42 @@ runTS <- function(symb){
 
 #getAnnualizedReturn(iDay, iMon, iYear, iVal, fDay, fMon, fYear, fVal)
 
- 
+
+#########################
+# Getintegrated
+# Integrates the earnings and price tables
+# I dont want a view due to the computational complexity of the full table join
+# (takes 4 sec after the SELECTS already)
+#########################
+#The query is ugly
+#SELECT DISTINCT day_, month_, year_, close, eps, div FROM
+#(SELECT	day_, month_, year_ 
+#  FROM xtse 
+#  WHERE
+#  symbol = "BNS"
+#  UNION all
+#  SELECT 15 as day_, month_, year_ 
+#  FROM earnings 
+#  WHERE symbol = "BNS")													
+#LEFT JOIN(
+#  SELECT 15 as day2, month_ as month2, year_ as year2, div, eps
+#  FROM earnings 
+#  WHERE symbol = "BNS"
+#) 
+#ON day_ = day2 AND month_ = month2 AND year_ = year2
+#LEFT JOIN(
+#  SELECT day_ as day3, month_ as month3, year_ as year3, close
+#  FROM xtse
+#  WHERE symbol = "BNS"
+#)
+#ON day_ = day3 AND month_ = month3 AND year_ = year3
+#ORDER BY year_, month_, day_
+#;
+getIntegrated <- function(symb){
+  sqlQuery <- paste("SELECT 15 AS day_, month_, year_, eps, div FROM earnings WHERE symbol = '", symb, "';", sep = "")
+  
+  
+  #
+  
+   
+}
