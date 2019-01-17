@@ -1,5 +1,5 @@
 library(sqldf)
-symbolsrequire(stats)
+require(stats)
 require(lattice)
 
 db <- dbConnect(SQLite(), dbname="~/Data/USFinance.db")
@@ -60,3 +60,4 @@ pereg <- function(symbol, todaysPrice, todaysPE){
   predict(pe.mod1, data.frame(PE = c(todaysPE)))
   
 }
+
