@@ -15,6 +15,7 @@ curs = database.cursor()
 
 ################### Get all column headers
 ## Utility function to find all items for all quarterly reports
+## These become the column headers in the database
 def get_column_headers():
 
     curs.execute("select company_ticker from tsx_companies;")
@@ -79,9 +80,7 @@ def get_quarter_indices(symbol):
     return max_value
 
 ################### Get present-day financials
-
-url_to_get = 'https://ca.advfn.com/stock-market/TSX/BNS/financials'
-
+## Not currently used
 def get_current_financials(url):
 
     resp = requests.get(url)
@@ -116,15 +115,8 @@ def get_current_financials(url):
     return ret
 
 ####################### Get a quarterly report
-## TODO: need to count the cells with align:right
 ## PageIndex: starts at 1 (the earliest quarterly report) and increases
 ##            database intializes last_report_index to 0
-
-url_to_test2 = 'https://ca.advfn.com/stock-market/TSX/BNS/financials?btn=istart_date&istart_date=69&mode=quarterly_reports'
-
-url_to_test3 = 'https://ca.advfn.com/stock-market/TSX/BNS/financials?btn=istart_date&istart_date=92&mode=quarterly_reports'
-
-
 def get_quarter_report(symbol, index):
 
     url = 'https://ca.advfn.com/stock-market/TSX/' + symbol + '/financials?btn=istart_date&istart_date=' + str(index) + '&mode=quarterly_reports'
@@ -195,15 +187,10 @@ def main():
             curs.execute(sql, job)
             database.commit()
 
-#get_quarter_indices('BNS')
-#get_column_headers()
-
-#print("   SCRAPE CURRENT FINANCIALS")
-#get_current_financials(url_to_get)
-#print("   SCRAPE A QUARTER")
-#get_quarter_report(url_to_test2)
-
-
-
 if __name__ == '__main__':
     main()
+
+
+#url_to_get = 'https://ca.advfn.com/stock-market/TSX/BNS/financials'
+#url_to_test2 = 'https://ca.advfn.com/stock-market/TSX/BNS/financials?btn=istart_date&istart_date=69&mode=quarterly_reports'
+#url_to_test3 = 'https://ca.advfn.com/stock-market/TSX/BNS/financials?btn=istart_date&istart_date=92&mode=quarterly_reports'
