@@ -1,0 +1,60 @@
+import requests
+import pandas as pd
+import sqlite3
+import json
+from sqlite3 import Error
+import sqlalchemy
+from sqlalchemy import create_engine
+
+api_key = 'CTECN021MT4UQAJ2'
+example_url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BNS.TO&apikey=CTECN021MT4UQAJ2'
+
+sqlite_db = '/home/ian/Data/yahoo.db'
+database = sqlite3.connect(sqlite_db)
+curs = database.cursor()
+
+#################
+## Gets the daily time series data in JSON format from alphavantage for the symbol selected
+##
+def get_daily_data(symbol):
+    url_to_get = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={}.TO&apikey=CTECN021MT4UQAJ2'.format(symbol)
+    resp = requests.get(url_to_get)
+    json_data = resp.text 
+    time_ser_data = json.loads(json_data)
+
+    if 'Time Series (Daily)' in time_ser_data:
+        #print(time_ser_data['Time Series (Daily)'])
+        df = pd.DataFrame.from_dict(time_ser_data['Time Series (Daily)']).T
+        df['symbol'] = symbol
+        df['Date'] = df.index
+        df['Adj Close'] = ''
+        df.columns = ['Open','High', 'Low','Close','Volume', 'symbol','Date', 'Adj Close']
+        #print(df[['symbol', 'Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']])
+        
+        for index, row in df.iterrows():
+            sql = '''INSERT OR IGNORE INTO aav_prices(symbol, Date) VALUES (?, ?)'''
+            job = (symbol, row['Date'])
+            #print(sql + str(job))
+            curs.execute(sql, job)
+            database.commit()
+
+            sql = '''UPDATE aav_prices SET Open = ?, High = ?, Low = ?, Close = ?, Volume = ? WHERE symbol = ? AND Date = ?'''
+            job = (row['Open'], row['High'], row['Low'], row['Close'], row['Volume'], symbol, row['Date'])
+            curs.execute(sql, job)
+            database.commit()
+
+
+
+def main():
+
+    #get the symbols and max index from the database
+    engine = create_engine('sqlite:////home/ian/Data/advfn.db')
+    symbol_df = pd.read_sql_table('tsx_companies', engine)
+
+    for symbol in symbol_df['company_ticker']:
+        print('Scrape : {}'.format(symbol))
+        get_daily_data(symbol)
+        print('  .. done!')
+
+if __name__ == '__main__':
+    main()

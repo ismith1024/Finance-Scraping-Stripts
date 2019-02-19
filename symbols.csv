@@ -1,249 +1,249 @@
-symbol,exchange,company
-AAV,TSX,Advantage Oil & Gas Ltd.
-ARE,TSX,Aecon Group Inc.
-AEM,TSX,Agnico Eagle Mines Limited
-AC,TSX,Air Canada
-ASR,TSX,Alacer Gold Corp.
-AGI,TSX,Alamos Gold Inc.
-AD,TSX,Alaris Royalty Corp.
-AQN,TSX,Algonquin Power & Utilities Corp.
-ATD.B,TSX,Alimentation Couche-Tard Inc.
-AP.UN,TSX,Allied Properties Real Estate Investment Trust
-ALA,TSX,AltaGas Ltd.
-AIF,TSX,Altus Group Limited
-APH,TSX,Aphria Inc.
-ARX,TSX,ARC Resources Ltd.
-AX.UN,TSX,Artis Real Estate Investment Trust
-ACO.X,TSX,ATCO Ltd.
-ATA,TSX,ATS Automation Tooling Systems Inc.
-ACB,TSX,Aurora Cannabis Inc.
-BTO,TSX,B2Gold Corp.
-BAD,TSX,Badger Daylighting Ltd.
-BMO,TSX,Bank of Montreal
-BNS,TSX,Bank of Nova Scotia
-ABX,TSX,Barrick Gold Corporation
-BTE,TSX,Baytex Energy Corp.
-BCE,TSX,BCE Inc.
-BIR,TSX,Birchcliff Energy Ltd.
-BB,TSX,BlackBerry Limited
-BEI.UN,TSX,Boardwalk Real Estate Investment Trust
-BBD.B,TSX,Bombardier Inc.
-BLX,TSX,Boralex Inc.
-BYD.UN,TSX,Boyd Group Income Fund
-BAM.A,TSX,Brookfield Asset Management Inc.
-BBU.UN,TSX,Brookfield Business Partners L.P.
-BIP.UN,TSX,Brookfield Infrastructure Partners L.P.
-BPY.UN,TSX,Brookfield Property Partners L.P.
-BEP.UN,TSX,Brookfield Renewable Partners L.P.
-DOO,TSX,BRP Inc.
-CAE,TSX,CAE Inc.
-CCO,TSX,Cameco Corporation
-GOOS,TSX,Canada Goose Holdings Inc.
-CAR.UN,TSX,Canadian Apartment Properties Real Estate Investment Trust
-CM,TSX,Canadian Imperial Bank of Commerce
-CNR,TSX,Canadian National Railway Company
-CNQ,TSX,Canadian Natural Resources Limited
-CP,TSX,Canadian Pacific Railway Limited
-CTC.A,TSX,Canadian Tire Corporation Limited
-CU,TSX,Canadian Utilities Limited
-CWB,TSX,Canadian Western Bank
-CFP,TSX,Canfor Corporation
-WEED,TSX,Canopy Growth Corporation
-CPX,TSX,Capital Power Corporation
-CAS,TSX,Cascades Inc.
-CCL.B,TSX,CCL Industries Inc.
-CLS,TSX,Celestica Inc.
-CVE,TSX,Cenovus Energy Inc.
-CG,TSX,Centerra Gold Inc.
-CEU,TSX,CES Energy Solutions Corp.
-GIB.A,TSX,CGI Group Inc.
-CSH.UN,TSX,Chartwell Retirement Residences
-CHE.UN,TSX,Chemtrade Logistics Income Fund
-CHP.UN,TSX,Choice Properties Real Estate Investment Trust
-CHR,TSX,Chorus Aviation Inc.
-CIX,TSX,CI Financial Corp.
-CGX,TSX,Cineplex Inc.
-CCA,TSX,Cogeco Communications Inc.
-CIGI,TSX,Colliers International Group Inc.
-CUF.UN,TSX,Cominar Real Estate Investment Trust
-CMG,TSX,Computer Modelling Group Ltd.
-CSU,TSX,Constellation Software Inc.
-CJR.B,TSX,Corus Entertainment Inc.
-BCB,TSX,Cott Corporation
-CPG,TSX,Crescent Point Energy Corp.
-CRR.UN,TSX,Crombie Real Estate Investment Trust
-DSG,TSX,Descartes Systems Group Inc.
-DGC,TSX,Detour Gold Corporation
-DOL,TSX,Dollarama Inc.
-DII.B,TSX,Dorel Industries Inc.
-DRG.UN,TSX,Dream Global Real Estate Investment Trust
-D.UN,TSX,Dream Office Real Estate Investment Trust
-ECN,TSX,ECN Capital Corp.
-ELD,TSX,Eldorado Gold Corporation
-EFN,TSX,Element Fleet Management Corp.
-EMA,TSX,Emera Incorporated
-EMP.A,TSX,Empire Company Limited
-ENB,TSX,Enbridge Inc.
-ENF,TSX,Enbridge Income Fund Holdings Inc.
-ECA,TSX,Encana Corporation
-EDV,TSX,Endeavour Mining Corporation
-ECI,TSX,EnerCare Inc.
-EFX,TSX,Enerflex Ltd.
-ERF,TSX,Enerplus Corporation
-ENGH,TSX,Enghouse Systems Limited
-ESI,TSX,Ensign Energy Services Inc.
-EIF,TSX,Exchange Income Corporation
-EXE,TSX,Extendicare Real Estate Investment Trust
-FFH,TSX,Fairfax Financial Holdings Limited
-FTT,TSX,Finning International Inc.
-FCR,TSX,First Capital Realty Inc.
-FR,TSX,First Majestic Silver Corp.
-FM,TSX,First Quantum Minerals Ltd.
-FSV,TSX,FirstService Corporation
-FTS,TSX,Fortis Inc.
-FVI,TSX,Fortuna Silver Mines Inc.
-FNV,TSX,Franco-Nevada Corporation
-FRU,TSX,Freehold Royalties Ltd.
-MIC,TSX,Genworth MI Canada Inc.
-WN,TSX,George Weston Limited
-GEI,TSX,Gibson Energy Inc.
-GIL,TSX,Gildan Activewear Inc.
-G,TSX,Goldcorp Inc.
-GTE,TSX,Gran Tierra Energy Inc.
-GRT.UN,TSX,Granite Real Estate Investment Trust
-GC,TSX,Great Canadian Gaming Corporation
-GWO,TSX,Great-West Lifeco Inc.
-GUY,TSX,Guyana Goldfields Inc.
-HR.UN,TSX,H&R Real Estate Investment Trust
-HCG,TSX,Home Capital Group Inc.
-HBM,TSX,HudBay Minerals Inc.
-HBC,TSX,Hudson's Bay Company
-HSE,TSX,Husky Energy Inc.
-H,TSX,Hydro One Limited
-IMG,TSX,Iamgold Corporation
-IGM,TSX,IGM Financial Inc.
-IMO,TSX,Imperial Oil Limited
-IAG,TSX,Industrial Alliance Insurance and Financial Services Inc.
-INE,TSX,Innergex Renewable Energy Inc.
-IFC,TSX,Intact Financial Corporation
-IPL,TSX,Inter Pipeline Ltd.
-IFP,TSX,Interfor Corporation
-ITP,TSX,Intertape Polymer Group Inc.
-IVN,TSX,Ivanhoe Mines Ltd.
-KEL,TSX,Kelt Exploration Ltd.
-KEY,TSX,Keyera Corp.
-KMP.UN,TSX,Killiam Apartment Real Estate Investment Trust
-KXS,TSX,Kinaxis Inc.
-KML,TSX,Kinder Morgan Canada
-K,TSX,Kinross Gold Corporation
-KL,TSX,Kirkland Lake Gold Ltd.
-GUD,TSX,Knight Therapeutics Inc.
-LIF,TSX,Labrador Iron Ore Royalty Corporation
-LB,TSX,Laurentian Bank of Canada
-LNR,TSX,Linamar Corporation
-L,TSX,Loblaw Companies Limited
-LUC,TSX,Lucara Diamond Corp.
-LUN,TSX,Lundin Mining Corporation
-MAG,TSX,MAG Silver Corp.
-MG,TSX,Magna International Inc.
-MFC,TSX,Manulife Financial Corporation
-MFI,TSX,Maple Leaf Foods Inc.
-MRE,TSX,Martinrea International Inc.
-MAXR,TSX,Maxar Technologies Ltd.
-MEG,TSX,MEG Energy Corp.
-MX,TSX,Methanex Corporation
-MRU,TSX,Metro Inc.
-MNW,TSX,Mitel Networks Corporation
-MSI,TSX,Morneau Shepell Inc.
-MTL,TSX,Mullen Group Ltd.
-NA,TSX,National Bank of Canada
-NSU,TSX,Nevsun Resources Ltd.
-NFI,TSX,New Flyer Industries Inc.
-NGD,TSX,New Gold Inc.
-NXE,TSX,NexGen Energy Ltd.
-OSB,TSX,Norbord Inc.
-NPI,TSX,Northland Power Inc.
-NVU.UN,TSX,Northview Apartment Real Estate Investment Trust
-NG,TSX,NovaGold Resources Inc.
-NTR,TSX,Nutrien Ltd.
-NVA,TSX,NuVista Energy Ltd.
-OGC,TSX,OceanaGold Corporation
-ONEX,TSX,Onex Corporation
-OTEX,TSX,Open Text Corporation
-OR,TSX,Osisko Gold Royalties Ltd
-PAAS,TSX,Pan American Silver Corp.
-POU,TSX,Paramount Resources Ltd.
-PXT,TSX,Parex Resources Inc.
-PKI,TSX,Parkland Fuel Corporation
-PSI,TSX,Pason Systems Inc.
-PPL,TSX,Pembina Pipeline Corporation
-PEY,TSX,Peyto Exploration & Development Corp.
-POW,TSX,Power Corporation of Canada
-PWF,TSX,Power Financial Corporation
-PSK,TSX,PrairieSky Royalty Ltd.
-PD,TSX,Precision Drilling Corporation
-PBH,TSX,Premium Brands Holdings Corporation
-PVG,TSX,Pretium Resources Inc.
-PLI,TSX,ProMetic Life Sciences Inc.
-QBR.B,TSX,Quebecor Inc.
-RRX,TSX,Raging River Exploration Inc.
-QSR,TSX,Restaurant Brands International Inc.
-REI.UN,TSX,RioCan Real Estate Investment Trust
-RBA,TSX,Ritchie Bros. Auctioneers Incorporated
-RCI.B,TSX,Rogers Communications Inc.
-RY,TSX,Royal Bank of Canada
-RUS,TSX,Russel Metals Inc.
-SSL,TSX,Sandstorm Gold Ltd.
-SAP,TSX,Saputo Inc.
-SES,TSX,Secure Energy Services Inc.
-SMF,TSX,Semafo Inc.
-VII,TSX,Seven Generations Energy Ltd.
-SJR.B,TSX,Shaw Communications Inc.
-SCL,TSX,ShawCor Ltd.
-SHOP,TSX,Shopify Inc.
-SIA,TSX,Sienna Senior Living Inc.
-SW,TSX,Sierra Wireless Inc.
-ZZZ,TSX,Sleep Country Canada Holdings Inc.
-SRU.UN,TSX,SmartCentres Real Estate Investment Trust
-SNC,TSX,SNC-Lavalin Group Inc.
-SPE,TSX,Spartan Energy Corp.
-TOY,TSX,Spin Master Corp.
-SSRM,TSX,SSR Mining
-STN,TSX,Stantec Inc.
-SJ,TSX,Stella-Jones Inc.
-SLF,TSX,Sun Life Financial Inc.
-SU,TSX,Suncor Energy Inc.
-SPB,TSX,Superior Plus Corp.
-THO,TSX,Tahoe Resources Inc.
-TECK.B,TSX,Teck Resources Limited
-T,TSX,Telus Corporation
-TFII,TSX,TFI International Inc.
-NWC,TSX,The North West Company Inc.
-TSGI,TSX,The Stars Group Inc.
-TRI,TSX,Thomson Reuters Corporation
-X,TSX,TMX Group Limited
-TOG,TSX,TORC Oil & Gas Ltd.
-TXG,TSX,Torex Gold Resources Inc.
-TIH,TSX,Toromont Industries Ltd.
-TD,TSX,Toronto-Dominion Bank
-TOU,TSX,Tourmaline Oil Corp.
-TA,TSX,TransAlta Corporation
-RNW,TSX,TransAlta Renewables Inc.
-TRP,TSX,TransCanada Corporation
-TCL.A,TSX,Transcontinental Inc.
-TCW,TSX,Trican Well Service Ltd.
-TCN,TSX,Tricon Capital Group Inc.
-TRQ,TSX,Turquoise Hill Resources Ltd.
-UNS,TSX,Uni-Select Inc.
-VRX,TSX,Valeant Pharmaceuticals International Inc.
-VET,TSX,Vermilion Energy Inc.
-WCN,TSX,Waste Connections Inc.
-WFT,TSX,West Fraser Timber Co. Ltd.
-WEF,TSX,Western Forest Products Inc.
-WJA,TSX,WestJet Airlines Ltd.
-WTE,TSX,Westshore Terminals Investment Corporation
-WPM,TSX,Wheaton Precious Metals Corp.
-WCP,TSX,Whitecap Resources Inc.
-WPK,TSX,Winpak Ltd.
-WSP,TSX,WSP Global Inc.
-YRI,TSX,Yamana Gold Inc.
+symbol,,exchange,company
+AAV,AAV.to,TSX,Advantage Oil & Gas Ltd.
+ARE,ARE.to,TSX,Aecon Group Inc.
+AEM,AEM.to,TSX,Agnico Eagle Mines Limited
+AC,AC.to,TSX,Air Canada
+ASR,ASR.to,TSX,Alacer Gold Corp.
+AGI,AGI.to,TSX,Alamos Gold Inc.
+AD,AD.to,TSX,Alaris Royalty Corp.
+AQN,AQN.to,TSX,Algonquin Power & Utilities Corp.
+ATD-B,ATD-B.to,TSX,Alimentation Couche-Tard Inc.
+AP-UN,AP-UN.to,TSX,Allied Properties Real Estate Investment Trust
+ALA,ALA.to,TSX,AltaGas Ltd.
+AIF,AIF.to,TSX,Altus Group Limited
+APH,APH.to,TSX,Aphria Inc.
+ARX,ARX.to,TSX,ARC Resources Ltd.
+AX-UN,AX-UN.to,TSX,Artis Real Estate Investment Trust
+ACO-X,ACO-X.to,TSX,ATCO Ltd.
+ATA,ATA.to,TSX,ATS Automation Tooling Systems Inc.
+ACB,ACB.to,TSX,Aurora Cannabis Inc.
+BTO,BTO.to,TSX,B2Gold Corp.
+BAD,BAD.to,TSX,Badger Daylighting Ltd.
+BMO,BMO.to,TSX,Bank of Montreal
+BNS,BNS.to,TSX,Bank of Nova Scotia
+ABX,ABX.to,TSX,Barrick Gold Corporation
+BTE,BTE.to,TSX,Baytex Energy Corp.
+BCE,BCE.to,TSX,BCE Inc.
+BIR,BIR.to,TSX,Birchcliff Energy Ltd.
+BB,BB.to,TSX,BlackBerry Limited
+BEI-UN,BEI-UN.to,TSX,Boardwalk Real Estate Investment Trust
+BBD-B,BBD-B.to,TSX,Bombardier Inc.
+BLX,BLX.to,TSX,Boralex Inc.
+BYD-UN,BYD-UN.to,TSX,Boyd Group Income Fund
+BAM-A,BAM-A.to,TSX,Brookfield Asset Management Inc.
+BBU-UN,BBU-UN.to,TSX,Brookfield Business Partners L.P.
+BIP-UN,BIP-UN.to,TSX,Brookfield Infrastructure Partners L.P.
+BPY-UN,BPY-UN.to,TSX,Brookfield Property Partners L.P.
+BEP-UN,BEP-UN.to,TSX,Brookfield Renewable Partners L.P.
+DOO,DOO.to,TSX,BRP Inc.
+CAE,CAE.to,TSX,CAE Inc.
+CCO,CCO.to,TSX,Cameco Corporation
+GOOS,GOOS.to,TSX,Canada Goose Holdings Inc.
+CAR-UN,CAR-UN.to,TSX,Canadian Apartment Properties Real Estate Investment Trust
+CM,CM.to,TSX,Canadian Imperial Bank of Commerce
+CNR,CNR.to,TSX,Canadian National Railway Company
+CNQ,CNQ.to,TSX,Canadian Natural Resources Limited
+CP,CP.to,TSX,Canadian Pacific Railway Limited
+CTC-A,CTC-A.to,TSX,Canadian Tire Corporation Limited
+CU,CU.to,TSX,Canadian Utilities Limited
+CWB,CWB.to,TSX,Canadian Western Bank
+CFP,CFP.to,TSX,Canfor Corporation
+WEED,WEED.to,TSX,Canopy Growth Corporation
+CPX,CPX.to,TSX,Capital Power Corporation
+CAS,CAS.to,TSX,Cascades Inc.
+CCL-B,CCL-B.to,TSX,CCL Industries Inc.
+CLS,CLS.to,TSX,Celestica Inc.
+CVE,CVE.to,TSX,Cenovus Energy Inc.
+CG,CG.to,TSX,Centerra Gold Inc.
+CEU,CEU.to,TSX,CES Energy Solutions Corp.
+GIB-A,GIB-A.to,TSX,CGI Group Inc.
+CSH-UN,CSH-UN.to,TSX,Chartwell Retirement Residences
+CHE-UN,CHE-UN.to,TSX,Chemtrade Logistics Income Fund
+CHP-UN,CHP-UN.to,TSX,Choice Properties Real Estate Investment Trust
+CHR,CHR.to,TSX,Chorus Aviation Inc.
+CIX,CIX.to,TSX,CI Financial Corp.
+CGX,CGX.to,TSX,Cineplex Inc.
+CCA,CCA.to,TSX,Cogeco Communications Inc.
+CIGI,CIGI.to,TSX,Colliers International Group Inc.
+CUF-UN,CUF-UN.to,TSX,Cominar Real Estate Investment Trust
+CMG,CMG.to,TSX,Computer Modelling Group Ltd.
+CSU,CSU.to,TSX,Constellation Software Inc.
+CJR-B,CJR-B.to,TSX,Corus Entertainment Inc.
+BCB,BCB.to,TSX,Cott Corporation
+CPG,CPG.to,TSX,Crescent Point Energy Corp.
+CRR-UN,CRR-UN.to,TSX,Crombie Real Estate Investment Trust
+DSG,DSG.to,TSX,Descartes Systems Group Inc.
+DGC,DGC.to,TSX,Detour Gold Corporation
+DOL,DOL.to,TSX,Dollarama Inc.
+DII-B,DII-B.to,TSX,Dorel Industries Inc.
+DRG-UN,DRG-UN.to,TSX,Dream Global Real Estate Investment Trust
+D-UN,D-UN.to,TSX,Dream Office Real Estate Investment Trust
+ECN,ECN.to,TSX,ECN Capital Corp.
+ELD,ELD.to,TSX,Eldorado Gold Corporation
+EFN,EFN.to,TSX,Element Fleet Management Corp.
+EMA,EMA.to,TSX,Emera Incorporated
+EMP-A,EMP-A.to,TSX,Empire Company Limited
+ENB,ENB.to,TSX,Enbridge Inc.
+ENF,ENF.to,TSX,Enbridge Income Fund Holdings Inc.
+ECA,ECA.to,TSX,Encana Corporation
+EDV,EDV.to,TSX,Endeavour Mining Corporation
+ECI,ECI.to,TSX,EnerCare Inc.
+EFX,EFX.to,TSX,Enerflex Ltd.
+ERF,ERF.to,TSX,Enerplus Corporation
+ENGH,ENGH.to,TSX,Enghouse Systems Limited
+ESI,ESI.to,TSX,Ensign Energy Services Inc.
+EIF,EIF.to,TSX,Exchange Income Corporation
+EXE,EXE.to,TSX,Extendicare Real Estate Investment Trust
+FFH,FFH.to,TSX,Fairfax Financial Holdings Limited
+FTT,FTT.to,TSX,Finning International Inc.
+FCR,FCR.to,TSX,First Capital Realty Inc.
+FR,FR.to,TSX,First Majestic Silver Corp.
+FM,FM.to,TSX,First Quantum Minerals Ltd.
+FSV,FSV.to,TSX,FirstService Corporation
+FTS,FTS.to,TSX,Fortis Inc.
+FVI,FVI.to,TSX,Fortuna Silver Mines Inc.
+FNV,FNV.to,TSX,Franco-Nevada Corporation
+FRU,FRU.to,TSX,Freehold Royalties Ltd.
+MIC,MIC.to,TSX,Genworth MI Canada Inc.
+WN,WN.to,TSX,George Weston Limited
+GEI,GEI.to,TSX,Gibson Energy Inc.
+GIL,GIL.to,TSX,Gildan Activewear Inc.
+G,G.to,TSX,Goldcorp Inc.
+GTE,GTE.to,TSX,Gran Tierra Energy Inc.
+GRT-UN,GRT-UN.to,TSX,Granite Real Estate Investment Trust
+GC,GC.to,TSX,Great Canadian Gaming Corporation
+GWO,GWO.to,TSX,Great-West Lifeco Inc.
+GUY,GUY.to,TSX,Guyana Goldfields Inc.
+HR-UN,HR-UN.to,TSX,H&R Real Estate Investment Trust
+HCG,HCG.to,TSX,Home Capital Group Inc.
+HBM,HBM.to,TSX,HudBay Minerals Inc.
+HBC,HBC.to,TSX,'Hudson''s Bay Company'
+HSE,HSE.to,TSX,Husky Energy Inc.
+H,H.to,TSX,Hydro One Limited
+IMG,IMG.to,TSX,Iamgold Corporation
+IGM,IGM.to,TSX,IGM Financial Inc.
+IMO,IMO.to,TSX,Imperial Oil Limited
+IAG,IAG.to,TSX,Industrial Alliance Insurance and Financial Services Inc.
+INE,INE.to,TSX,Innergex Renewable Energy Inc.
+IFC,IFC.to,TSX,Intact Financial Corporation
+IPL,IPL.to,TSX,Inter Pipeline Ltd.
+IFP,IFP.to,TSX,Interfor Corporation
+ITP,ITP.to,TSX,Intertape Polymer Group Inc.
+IVN,IVN.to,TSX,Ivanhoe Mines Ltd.
+KEL,KEL.to,TSX,Kelt Exploration Ltd.
+KEY,KEY.to,TSX,Keyera Corp.
+KMP-UN,KMP-UN.to,TSX,Killiam Apartment Real Estate Investment Trust
+KXS,KXS.to,TSX,Kinaxis Inc.
+KML,KML.to,TSX,Kinder Morgan Canada
+K,K.to,TSX,Kinross Gold Corporation
+KL,KL.to,TSX,Kirkland Lake Gold Ltd.
+GUD,GUD.to,TSX,Knight Therapeutics Inc.
+LIF,LIF.to,TSX,Labrador Iron Ore Royalty Corporation
+LB,LB.to,TSX,Laurentian Bank of Canada
+LNR,LNR.to,TSX,Linamar Corporation
+L,L.to,TSX,Loblaw Companies Limited
+LUC,LUC.to,TSX,Lucara Diamond Corp.
+LUN,LUN.to,TSX,Lundin Mining Corporation
+MAG,MAG.to,TSX,MAG Silver Corp.
+MG,MG.to,TSX,Magna International Inc.
+MFC,MFC.to,TSX,Manulife Financial Corporation
+MFI,MFI.to,TSX,Maple Leaf Foods Inc.
+MRE,MRE.to,TSX,Martinrea International Inc.
+MAXR,MAXR.to,TSX,Maxar Technologies Ltd.
+MEG,MEG.to,TSX,MEG Energy Corp.
+MX,MX.to,TSX,Methanex Corporation
+MRU,MRU.to,TSX,Metro Inc.
+MNW,MNW.to,TSX,Mitel Networks Corporation
+MSI,MSI.to,TSX,Morneau Shepell Inc.
+MTL,MTL.to,TSX,Mullen Group Ltd.
+NA,NA.to,TSX,National Bank of Canada
+NSU,NSU.to,TSX,Nevsun Resources Ltd.
+NFI,NFI.to,TSX,New Flyer Industries Inc.
+NGD,NGD.to,TSX,New Gold Inc.
+NXE,NXE.to,TSX,NexGen Energy Ltd.
+OSB,OSB.to,TSX,Norbord Inc.
+NPI,NPI.to,TSX,Northland Power Inc.
+NVU-UN,NVU-UN.to,TSX,Northview Apartment Real Estate Investment Trust
+NG,NG.to,TSX,NovaGold Resources Inc.
+NTR,NTR.to,TSX,Nutrien Ltd.
+NVA,NVA.to,TSX,NuVista Energy Ltd.
+OGC,OGC.to,TSX,OceanaGold Corporation
+ONEX,ONEX.to,TSX,Onex Corporation
+OTEX,OTEX.to,TSX,Open Text Corporation
+OR,OR.to,TSX,Osisko Gold Royalties Ltd
+PAAS,PAAS.to,TSX,Pan American Silver Corp.
+POU,POU.to,TSX,Paramount Resources Ltd.
+PXT,PXT.to,TSX,Parex Resources Inc.
+PKI,PKI.to,TSX,Parkland Fuel Corporation
+PSI,PSI.to,TSX,Pason Systems Inc.
+PPL,PPL.to,TSX,Pembina Pipeline Corporation
+PEY,PEY.to,TSX,Peyto Exploration & Development Corp.
+POW,POW.to,TSX,Power Corporation of Canada
+PWF,PWF.to,TSX,Power Financial Corporation
+PSK,PSK.to,TSX,PrairieSky Royalty Ltd.
+PD,PD.to,TSX,Precision Drilling Corporation
+PBH,PBH.to,TSX,Premium Brands Holdings Corporation
+PVG,PVG.to,TSX,Pretium Resources Inc.
+PLI,PLI.to,TSX,ProMetic Life Sciences Inc.
+QBR-B,QBR-B.to,TSX,Quebecor Inc.
+RRX,RRX.to,TSX,Raging River Exploration Inc.
+QSR,QSR.to,TSX,Restaurant Brands International Inc.
+REI-UN,REI-UN.to,TSX,RioCan Real Estate Investment Trust
+RBA,RBA.to,TSX,Ritchie Bros. Auctioneers Incorporated
+RCI-B,RCI-B.to,TSX,Rogers Communications Inc.
+RY,RY.to,TSX,Royal Bank of Canada
+RUS,RUS.to,TSX,Russel Metals Inc.
+SSL,SSL.to,TSX,Sandstorm Gold Ltd.
+SAP,SAP.to,TSX,Saputo Inc.
+SES,SES.to,TSX,Secure Energy Services Inc.
+SMF,SMF.to,TSX,Semafo Inc.
+VII,VII.to,TSX,Seven Generations Energy Ltd.
+SJR-B,SJR-B.to,TSX,Shaw Communications Inc.
+SCL,SCL.to,TSX,ShawCor Ltd.
+SHOP,SHOP.to,TSX,Shopify Inc.
+SIA,SIA.to,TSX,Sienna Senior Living Inc.
+SW,SW.to,TSX,Sierra Wireless Inc.
+ZZZ,ZZZ.to,TSX,Sleep Country Canada Holdings Inc.
+SRU-UN,SRU-UN.to,TSX,SmartCentres Real Estate Investment Trust
+SNC,SNC.to,TSX,SNC-Lavalin Group Inc.
+SPE,SPE.to,TSX,Spartan Energy Corp.
+TOY,TOY.to,TSX,Spin Master Corp.
+SSRM,SSRM.to,TSX,SSR Mining
+STN,STN.to,TSX,Stantec Inc.
+SJ,SJ.to,TSX,Stella-Jones Inc.
+SLF,SLF.to,TSX,Sun Life Financial Inc.
+SU,SU.to,TSX,Suncor Energy Inc.
+SPB,SPB.to,TSX,Superior Plus Corp.
+THO,THO.to,TSX,Tahoe Resources Inc.
+TECK-B,TECK-B.to,TSX,Teck Resources Limited
+T,T.to,TSX,Telus Corporation
+TFII,TFII.to,TSX,TFI International Inc.
+NWC,NWC.to,TSX,The North West Company Inc.
+TSGI,TSGI.to,TSX,The Stars Group Inc.
+TRI,TRI.to,TSX,Thomson Reuters Corporation
+X,X.to,TSX,TMX Group Limited
+TOG,TOG.to,TSX,TORC Oil & Gas Ltd.
+TXG,TXG.to,TSX,Torex Gold Resources Inc.
+TIH,TIH.to,TSX,Toromont Industries Ltd.
+TD,TD.to,TSX,Toronto-Dominion Bank
+TOU,TOU.to,TSX,Tourmaline Oil Corp.
+TA,TA.to,TSX,TransAlta Corporation
+RNW,RNW.to,TSX,TransAlta Renewables Inc.
+TRP,TRP.to,TSX,TransCanada Corporation
+TCL-A,TCL-A.to,TSX,Transcontinental Inc.
+TCW,TCW.to,TSX,Trican Well Service Ltd.
+TCN,TCN.to,TSX,Tricon Capital Group Inc.
+TRQ,TRQ.to,TSX,Turquoise Hill Resources Ltd.
+UNS,UNS.to,TSX,Uni-Select Inc.
+VRX,VRX.to,TSX,Valeant Pharmaceuticals International Inc.
+VET,VET.to,TSX,Vermilion Energy Inc.
+WCN,WCN.to,TSX,Waste Connections Inc.
+WFT,WFT.to,TSX,West Fraser Timber Co. Ltd.
+WEF,WEF.to,TSX,Western Forest Products Inc.
+WJA,WJA.to,TSX,WestJet Airlines Ltd.
+WTE,WTE.to,TSX,Westshore Terminals Investment Corporation
+WPM,WPM.to,TSX,Wheaton Precious Metals Corp.
+WCP,WCP.to,TSX,Whitecap Resources Inc.
+WPK,WPK.to,TSX,Winpak Ltd.
+WSP,WSP.to,TSX,WSP Global Inc.
+YRI,YRI.to,TSX,Yamana Gold Inc.
