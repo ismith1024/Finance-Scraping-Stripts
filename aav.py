@@ -7,31 +7,31 @@ import sqlalchemy
 from sqlalchemy import create_engine
 import time
 
-api_key = 'CTECN021MT4UQAJ2'
-example_url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BNS.TO&apikey=CTECN021MT4UQAJ2'
 
+api_key = 'CTECN021MT4UQAJ2'
 sqlite_db = '/home/ian/Data/yahoo.db'
 database = sqlite3.connect(sqlite_db)
 curs = database.cursor()
 
 #################
 ## Gets the daily time series data in JSON format from alphavantage for the symbol selected
-##
+##  In: the ticker symbol in Yahoo notation (no exchange)
+##  Out: Writes time sereis to SQLite database
 def get_daily_data(sym):
+    #alphavantage uses a '-' to separate share classes or designate a unit, yahoo uses a '.'
     symbol = sym.replace('.','-')
     url_to_get = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={}.TO&apikey=CTECN021MT4UQAJ2'.format(symbol)
     resp = requests.get(url_to_get)
     json_data = resp.text 
     time_ser_data = json.loads(json_data)
 
+    #for valid response
     if 'Time Series (Daily)' in time_ser_data:
-        #print(time_ser_data['Time Series (Daily)'])
         df = pd.DataFrame.from_dict(time_ser_data['Time Series (Daily)']).T
         df['symbol'] = symbol
         df['Date'] = df.index
         df['Adj Close'] = ''
         df.columns = ['Open','High', 'Low','Close','Volume', 'symbol','Date', 'Adj Close']
-        #print(df[['symbol', 'Date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']])
         
         for index, row in df.iterrows():
             sql = '''INSERT OR IGNORE INTO aav_prices(symbol, Date) VALUES (?, ?)'''
@@ -54,6 +54,7 @@ def main():
     symbol_df = pd.read_sql_table('tsx_companies', engine)
 
     for index, symbol in enumerate(symbol_df['company_ticker']):
+        #Need to sleep for a minute after five scrapes - API rules
         if index %5 == 0:
             print('(need to wait 1 minute)')
             time.sleep(60)

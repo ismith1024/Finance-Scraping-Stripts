@@ -89,12 +89,6 @@ def get_current_financials(url):
 
     soup = BeautifulSoup(page, 'html.parser')
 
-    #table_keys = []
-    #table_vals = []
-
-    #for i in soup.find_all('td', attrs={'class': 's', 'align' : 'left'}):
-    #       if i.find(attrs = {})
-
     table_keys = soup.find_all('td', attrs={'class': 's', 'align' : 'left'})
     table_vals = soup.find_all('td', attrs={'class': 's', 'align' : 'right'})
 
@@ -127,9 +121,6 @@ def get_quarter_report(symbol, index):
 
     row_heads = soup.find_all('td', attrs={'class': 's', 'align' : 'left'})
     row_data = soup.find_all('td', attrs={'class': 's', 'align' : 'right'})
-
-    #print('Row headers: ' + str(len(row_heads)))
-    #print('Row data: ' + str(len(row_data)))
 
     num_cols = int(len(row_data) / len(row_heads))
     print('Found ' + str(num_cols) + ' columns')
