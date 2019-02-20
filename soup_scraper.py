@@ -122,6 +122,7 @@ def get_quarter_report(symbol, index):
     row_heads = soup.find_all('td', attrs={'class': 's', 'align' : 'left'})
     row_data = soup.find_all('td', attrs={'class': 's', 'align' : 'right'})
 
+
     num_cols = int(len(row_data) / len(row_heads))
     print('Found ' + str(num_cols) + ' columns')
     
@@ -139,11 +140,11 @@ def get_quarter_report(symbol, index):
 
     for index, val in enumerate(row_heads):
         
-        sql_col = val.text.strip();
+        sql_col = val.text.strip()
 
         print_str = str(val.text.strip()) + ' : '
         for index2 in range(num_cols):            
-            curr_date = dates[index2];
+            curr_date = dates[index2]
             curr_val = row_data[num_cols*index + index2].text.strip()
             curs.execute("UPDATE quarterly_reports SET `{cn}` = ? WHERE company_ticker = ? AND report_date = ?;".format(cn=sql_col), (curr_val, symbol, curr_date))
     
