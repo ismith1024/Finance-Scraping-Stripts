@@ -58,9 +58,9 @@ def get_yahoo_indicators(symbol):
     else:
         beta = float(beta_raw.replace(',',''))
     
-    #date_today = str(datetime.date.today())
+    date_today = str(datetime.date.today())
     #one time only to run on weekend
-    date_today = '2019-05-03'
+    #date_today = '2019-05-03'
 
 
     print('  eps          {}'.format(eps))
