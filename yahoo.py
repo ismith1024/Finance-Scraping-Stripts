@@ -58,6 +58,15 @@ def get_yahoo_indicators(symbol):
     else:
         beta = float(beta_raw.replace(',',''))
     
+    #<td class="Ta(end) Fw(600) Lh(14px)" data-test="EARNINGS_DATE-value"><span>May 28, 2019</span></td>
+    #earn_date = soup.find('td', attrs={'data-test': 'EARNINGS_DATE-value'}).get_text().strip()    
+    #if earn_date == 'N/A':
+    #    earnings_date = 0
+    #else:
+    #    earnings_date = earn_date
+
+    
+    
     date_today = str(datetime.date.today())
     #one time only to run on weekend
     #date_today = '2019-05-03'
@@ -68,11 +77,15 @@ def get_yahoo_indicators(symbol):
     print('  div paid     {}'.format(div))
     print('  div yield    {}'.format(div_yld))
     print('  beta         {}'.format(beta))
+    print('  earn date    {}'.format(earnings_date))
     print('\n')
     
     yahoo_sql = '''INSERT OR IGNORE INTO yahoo_indicators(symbol, Date, pe, eps, div_payout, div_yield, beta) VALUES(?,?,?,?,?,?,?)'''
+    #yahoo_sql_2 = '''INSERT OR IGNORE INTO earnings_dates(symbol, date) VALUES(?,?)'''
     job = (symbol, date_today, pe, eps, div, div_yld, beta)
+    #job2 = (symbol, earnings_date)
     yahoo_curs.execute(yahoo_sql, job)
+    #yahoo_curs.execute(yahoo_sql_2, job2)
     yahoo_database.commit()
 
 def main():
