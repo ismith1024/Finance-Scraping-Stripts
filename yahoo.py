@@ -77,7 +77,7 @@ def get_yahoo_indicators(symbol):
     print('  div paid     {}'.format(div))
     print('  div yield    {}'.format(div_yld))
     print('  beta         {}'.format(beta))
-    print('  earn date    {}'.format(earnings_date))
+    #print('  earn date    {}'.format(earnings_date))
     print('\n')
     
     yahoo_sql = '''INSERT OR IGNORE INTO yahoo_indicators(symbol, Date, pe, eps, div_payout, div_yield, beta) VALUES(?,?,?,?,?,?,?)'''
