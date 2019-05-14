@@ -32,13 +32,16 @@ def get_yahoo_indicators(symbol):
     
     #split the div and yeild string which is formatted 'xx.xx (yy.yy%)'
     div_raw = soup.find('td', attrs={'data-test': 'DIVIDEND_AND_YIELD-value'})
-    dy = div_raw.string.split()
-    if dy[0].strip() == 'N/A':
-        div = 0
-        div_yld = 0
+    if div_raw is None:
+        return
     else:
-        div = float(dy[0].strip().replace(',',''))
-        div_yld = float(re.sub(r'[^\w.]', '', dy[1]))
+        dy = div_raw.string.split()
+        if dy[0].strip() == 'N/A':
+            div = 0
+            div_yld = 0
+        else:
+            div = float(dy[0].strip().replace(',',''))
+            div_yld = float(re.sub(r'[^\w.]', '', dy[1]))
     
     eps_raw = soup.find('td', attrs={'data-test': 'EPS_RATIO-value'}).string.strip()
     if eps_raw == 'N/A':
