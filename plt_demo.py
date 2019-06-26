@@ -6,34 +6,34 @@ import matplotlib
 from matplotlib import pyplot as plt
 plt.figure(figsize=(20,10))
 
-yahoo_db = '/home/ian/Data/yahoo.db'
-tmx_db = '/home/ian/Data/tmx.db'
-advfn_db = '/home/ian/Data/advfn.db'
+db = '/home/ian/Data/tsx_analysis.db'
+#tmx_db = '/home/ian/Data/tmx.db'
+#advfn_db = '/home/ian/Data/advfn.db'
 
-yahoo_database = sqlite3.connect(yahoo_db)
-tmx_database = sqlite3.connect(tmx_db)
-advfn_database = sqlite3.connect(advfn_db)
+database = sqlite3.connect(db)
+#tmx_database = sqlite3.connect(tmx_db)
+#advfn_database = sqlite3.connect(advfn_db)
 
 tmx_sql = '''SELECT date, eps FROM tmx_earnings WHERE symbol = "BNS"'''
-df_tmx = pd.read_sql_query(tmx_sql, tmx_database)
+df_tmx = pd.read_sql_query(tmx_sql, database)
 df_tmx.columns = ['date', 'eps']
 df_tmx['date_parsed'] = df_tmx['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
 df_tmx.drop(columns = 'date', inplace = True)
 
 aav_sql = '''SELECT Date, Close FROM aav_prices WHERE symbol = "BNS" AND close != "null"'''
-df_aav = pd.read_sql_query(aav_sql, yahoo_database)
+df_aav = pd.read_sql_query(aav_sql, database)
 df_aav.columns = ['date', 'close']
 df_aav['date_parsed'] = df_aav['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
 df_aav.drop(columns = 'date', inplace = True)
 
 yahoo_prices_sql = '''SELECT Date, Close FROM tsx_prices WHERE symbol = "BNS" AND close != "null"'''
-df_y_price = pd.read_sql_query(yahoo_prices_sql, yahoo_database)
+df_y_price = pd.read_sql_query(yahoo_prices_sql, database)
 df_y_price.columns = ['date', 'close']
 df_y_price['date_parsed'] = df_y_price['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
 df_y_price.drop(columns = 'date', inplace = True)
 
 divs_sql = '''SELECT Date, Dividends, split_factor FROM divs WHERE symbol = "BNS"'''
-df_divs = pd.read_sql_query(divs_sql, yahoo_database) 
+df_divs = pd.read_sql_query(divs_sql, database) 
 df_divs.columns = ['date', 'div', 'split_factor']
 df_divs['date_parsed'] = df_divs['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
 df_divs.drop(columns = 'date', inplace = True)

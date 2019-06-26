@@ -12,13 +12,17 @@ import sqlalchemy
 from sqlalchemy import create_engine
 
 #Database Connection
-tmx_db = '/home/ian/Data/tmx.db'
-tmx_database = sqlite3.connect(tmx_db)
-tmx_curs = tmx_database.cursor()
+#tmx_db = '/home/ian/Data/tmx.db'
+#tmx_database = sqlite3.connect(tmx_db)
+#tmx_curs = tmx_database.cursor()
 
-advfn_db = '/home/ian/Data/advfn.db'
-advfn_database = sqlite3.connect(advfn_db)
-advfn_curs = advfn_database.cursor()
+#advfn_db = '/home/ian/Data/advfn.db'
+#advfn_database = sqlite3.connect(advfn_db)
+#advfn_curs = advfn_database.cursor()
+
+db = '/home/ian/Data/tsx_analysis.db'
+database = sqlite3.connect(db)
+curs = database.cursor()
 
 
 def scrape_tmx(symbol):
@@ -79,7 +83,8 @@ def scrape_tmx(symbol):
 
 			sql = '''INSERT OR IGNORE INTO tmx_earnings(symbol, date, eps, consensus_eps, surprise) VALUES(?,?,?,?,?)'''
 			job =  (symbol, parsed_date, eps, consensus, surprise)
-			tmx_curs.execute(sql, job)        
+			#tmx_curs.execute(sql, job) 
+			curs.execute(sql, job)       
 	
 	print('\n')
 	tmx_database.commit()
@@ -87,25 +92,28 @@ def scrape_tmx(symbol):
 def main():
 
     #get the symbols from the database
-    advfn_curs.execute("select company_ticker from tsx_companies;")
-    results = advfn_curs.fetchall()
+    #advfn_curs.execute("select company_ticker from tsx_companies;")
+    #results = advfn_curs.fetchall()
 
-    tickers = []
+    curs.execute("select company_ticker from tsx_companies;")
+    results = curs.fetchall()
+
+    #tickers = ['SSL', 'TRST']
 
 	#tmx uses google nomenclature (BBD.B as opposed to BBD-B)
 	#so the symbols in advfn are correct
-    for res in results:
-    	tickers.append(res[0])
+    #for res in results:
+    # 	tickers.append(res[0])
 
-    last_good = 'WN'
-    have_data = True
+    #last_good = 'WN'
+    #have_data = True
 
     for symbol in tickers:
-    	if symbol == last_good:
-    		have_data = False
+    	#if symbol == last_good:
+    	#	have_data = False
 		
-    	if not have_data:
-        	scrape_tmx(symbol)
+    	#if not have_data:
+        scrape_tmx(symbol)
 
 if __name__ == '__main__':
     main()

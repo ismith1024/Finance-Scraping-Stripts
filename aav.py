@@ -9,7 +9,8 @@ import time
 
 
 api_key = 'CTECN021MT4UQAJ2'
-sqlite_db = '/home/ian/Data/yahoo.db'
+#sqlite_db = '/home/ian/Data/yahoo.db'
+sqlite_db = '/home/ian/Data/tsx_analysis.db'
 database = sqlite3.connect(sqlite_db)
 curs = database.cursor()
 
@@ -50,7 +51,8 @@ def get_daily_data(sym):
 def main():
 
     #get the symbols and max index from the database
-    engine = create_engine('sqlite:////home/ian/Data/advfn.db')
+    #engine = create_engine('sqlite:////home/ian/Data/advfn.db')
+    engine = create_engine('sqlite:////home/ian/Data/tsx_analysis.db')
     symbol_df = pd.read_sql_table('tsx_companies', engine)
 
     for index, symbol in enumerate(symbol_df['company_ticker']):

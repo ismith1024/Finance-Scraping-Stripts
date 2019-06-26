@@ -10,12 +10,17 @@ import re
 import time
 import datetime
 
-sqlite_db = '/home/ian/Data/advfn.db'
-yahoo_db =  '/home/ian/Data/yahoo.db'
+#sqlite_db = '/home/ian/Data/advfn.db'
+#yahoo_db =  '/home/ian/Data/yahoo.db'
+#database = sqlite3.connect(sqlite_db)
+#yahoo_database = sqlite3.connect(yahoo_db)
+#curs = database.cursor()
+#yahoo_curs = yahoo_database.cursor()
+sqlite_db = '/home/ian/Data/tsx_analysis.db'
 database = sqlite3.connect(sqlite_db)
-yahoo_database = sqlite3.connect(yahoo_db)
 curs = database.cursor()
-yahoo_curs = yahoo_database.cursor()
+
+
 
 def get_yahoo_indicators(symbol):
     '''
@@ -87,9 +92,12 @@ def get_yahoo_indicators(symbol):
     #yahoo_sql_2 = '''INSERT OR IGNORE INTO earnings_dates(symbol, date) VALUES(?,?)'''
     job = (symbol, date_today, pe, eps, div, div_yld, beta)
     #job2 = (symbol, earnings_date)
-    yahoo_curs.execute(yahoo_sql, job)
+    #yahoo_curs.execute(yahoo_sql, job)
+    
+    curs.execute(yahoo_sql, job)
     #yahoo_curs.execute(yahoo_sql_2, job2)
-    yahoo_database.commit()
+    #yahoo_database.commit()
+    database.commit()
 
 def main():
 

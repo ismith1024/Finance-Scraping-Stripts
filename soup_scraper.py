@@ -9,7 +9,7 @@ from sqlite3 import Error
 import sqlalchemy
 from sqlalchemy import create_engine
 
-sqlite_db = '/home/ian/Data/advfn.db'
+sqlite_db = '/home/ian/Data/tsx_analysis.db'
 database = sqlite3.connect(sqlite_db)
 curs = database.cursor()
 
